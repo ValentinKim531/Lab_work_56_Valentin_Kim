@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block menu %}
+
+{% endblock %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="flex_none row-cols-1 row-cols-md-2 g-4">
+        <h1 class="title">Categories</h1>
+        {% for category in categories %}
+        <div class="col">
+            <ol class="list-group">
+                <li class="padding_bottom list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">{{ category.name }}</div>
+                    </div>
+                    <span class="button_padding"><a href="{% url 'category_edit' category.pk %}"
+                            class="btn btn-info">Edit</a></span>
+                    <span class="button_padding"><a href="{% url 'category_delete' category.pk %}"
+                            class="btn btn-danger">Delete</a></span>
+                </li>
+            </ol>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

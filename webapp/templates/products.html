@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block menu %}
+
+{% endblock %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        {% for product in products %}
+        <div class="col">
+            <ol class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <img class="image_flex_products" src="{{ product.image }}" alt="product photo">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">Title: {{ product.title }}</div>
+                        <div class="fw-bold">Categories: {{ product.category }}</div>
+                        <div class="fw-bold">Price: {{ product.price }} $</div>
+                        <span class="badge bg-primary rounded-pill"><a href="{% url 'product_view' product.pk%}"
+                                class="button-text-color">see more >>></a></span>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        {% endfor %}
+</div>
+</div>
+{% endblock %}

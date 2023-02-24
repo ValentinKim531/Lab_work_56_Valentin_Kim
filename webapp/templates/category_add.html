@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Category add{% endblock %}
+
+{% block content %}
+<form action="{% url 'category_add' %}" method="post">
+    {% csrf_token %}
+    <h1 class="title">Add category</h1>
+    {% include 'partial/category_form.html' with button_text_category='Create' %}
+</form>
+{% endblock %}
