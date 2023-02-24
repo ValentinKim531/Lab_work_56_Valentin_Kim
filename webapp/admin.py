@@ -1,14 +1,8 @@
 from django.contrib import admin
 
-from webapp.models import Categories, Products
+from webapp.models import Products
 
 # Register your models here.
-
-class Categories_Admin(admin.ModelAdmin):
-    list_display = ('id', 'name')
-    list_filter = ('id', 'name')
-
-admin.site.register(Categories, Categories_Admin)
 
 
 class Products_Admin(admin.ModelAdmin):

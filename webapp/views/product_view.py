@@ -2,14 +2,14 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.handlers.wsgi import WSGIRequest
 
 from webapp.forms import ProductsForm
-from webapp.models import Products, Categories
+from webapp.models import Products
+
 
 def product_view(request, pk):
     product = get_object_or_404(Products, pk=pk)
     return render(request, 'product_view.html', context={
         'product': product
     })
-
 
 
 def delete_product(request, pk):

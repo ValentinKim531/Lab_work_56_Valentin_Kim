@@ -25,6 +25,11 @@ body {
     margin: 0 auto;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .button-text-color {
     color: white;
 }

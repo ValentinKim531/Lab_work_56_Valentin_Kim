@@ -2,7 +2,7 @@ from django import forms
 from django.core.exceptions import ValidationError
 
 
-from webapp.models import Products, Categories
+from webapp.models import Products
 
 
 class ProductsForm(forms.ModelForm):
@@ -30,19 +30,4 @@ class ProductsForm(forms.ModelForm):
         if len(description) < 2:
             raise ValidationError("Description must be longer than 2 characters")
         return description
-
-
-class CategoriesForm(forms.ModelForm):
-
-    class Meta:
-        model = Categories
-        fields = ("name",)
-
-        labels = {"name": 'Название'}
-
-    def clean_title(self):
-        name = self.cleaned_data.get('name')
-        if len(name) < 2:
-            raise ValidationError("Name must be longer than 2 characters")
-        return name
 
