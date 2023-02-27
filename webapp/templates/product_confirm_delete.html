@@ -17,9 +17,8 @@
                     <p class="card-text transfer_text_space">{{ product.description }}</p>
                     <p class="card-text"><small class="text-muted">{{ product.created_at }}</small></p>
                     <span class="button_padding"><a href="{% url 'confirm_delete' product.pk %}"
-                                class="btn btn-danger">Delete</a></span>
-                    <span class="button_padding"><a href="{% url 'products' %}"
-                            class="btn btn-info">Cancel</a></span>
+                            class="btn btn-danger">Delete</a></span>
+                    <span class="button_padding"><a href="{% url 'products' %}" class="btn btn-info">Cancel</a></span>
                 </div>
             </div>
         </div>
