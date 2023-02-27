@@ -20,5 +20,5 @@ urlpatterns = [
         confirm_delete,
         name="confirm_delete",
     ),
-    path("products/<int:pk>/edit", edit_product, name="product_edit"),
+    path("products/<int:pk>/edit", edit_product, name="product_edit")
 ]

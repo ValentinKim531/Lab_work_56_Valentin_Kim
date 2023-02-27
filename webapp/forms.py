@@ -5,10 +5,6 @@ from django.core.exceptions import ValidationError
 from webapp.models import Products
 
 
-class GeeksForm(forms.Form):
-    geeks_field = forms.IntegerField(min_value=1)
-
-
 class ProductsForm(forms.ModelForm):
     class Meta:
         model = Products
@@ -43,3 +39,7 @@ class ProductsForm(forms.ModelForm):
                 "Description must be longer than 2 characters"
             )
         return description
+
+
+class SearchForm(forms.Form):
+    query = forms.CharField()

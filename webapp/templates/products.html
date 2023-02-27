@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% csrf_token %}
+{% bootstrap_form form %}d
 {% block title %}Home{% endblock %}
 {% block menu %}
 
 {% endblock %}
 {% block content %}
 
+
+
 <div class="container-fluid">
+    <div>
+        {% include 'partial/search_form.html' %}
+    </div>
     <div class="row row-cols-1 row-cols-md-2 g-4">
         {% for product in products %}
         <div class="col">
@@ -18,9 +26,9 @@
                         </div>
                         <div class="fw-bold">Categories: {{ product.category }}</div>
                         <div class="fw-bold">Price: {{ product.price }} $</div>
-                        <span class="badge bg-primary rounded-pill">
-                            <a href="{% url 'product_view' product.pk%}"
-                                class="button-text-color">see more >>></a></span>
+                        <span class="badge bg-info rounded-pill">
+                            <a href="{% url 'product_view' product.pk%}" class="button-text-color">see more
+                                >>></a></span>
                     </div>
                 </li>
             </ol>
